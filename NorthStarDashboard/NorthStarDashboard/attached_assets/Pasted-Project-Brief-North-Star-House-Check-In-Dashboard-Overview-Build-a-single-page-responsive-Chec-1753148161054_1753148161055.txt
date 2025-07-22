@@ -1,0 +1,341 @@
+Project Brief: North Star House Check‑In Dashboard
+Overview:
+ Build a single‑page, responsive Check‑In Dashboard for North Star House staff and volunteers. It should feel light, organized, and fast, with seamless Google Sheets integration for data capture.
+
+1. Layout & Styling
+Container: Centered card, 400–600 px wide, on a light‑gray/off‑white background
+
+
+Typography: Sans‑serif
+
+
+Title: 24–32 px bold, centered
+
+
+Subtitle: 16–18 px, centered
+
+
+Body text: 14–16 px
+
+
+Spacing: 24 px vertical gaps between sections; 16 px padding inside cards
+
+
+
+2. Header Section
+Title: “Check‑In Dashboard” (bold, centered)
+
+
+Badge: 60 px accent‑color circle with white group icon, centered below title
+
+
+Subtitle: “Check into the North Star House!”
+
+
+Tagline: “Quick access to all check‑in features” (lighter weight)
+
+
+
+3. Navigation Cards
+Four stacked, full‑width (100%) cards, each 48 px tall, 16 px vertical margin, 8 px corner radius, subtle drop shadow. Inside each: an icon circle + title + subtitle.
+Color
+Name
+Icon
+Subtitle
+Blue
+Volunteer Check‑In
+hammer
+Sign in and out volunteers
+Green
+Guest Registration
+person+
+Register new guests
+Purple
+Employee Clock
+clock
+Time tracking for staff
+Red
+Manage & Data
+gear
+Manage people and view data
+
+
+4. Modals for Each Function
+Clicking a card opens its modal (fade/slide, 50% backdrop). White bg, 8 px corners, max‑width 480 px, 24 px padding, × close in top‑right.
+4.1 Volunteer Check‑In Modal
+Opens on click of the Volunteer card, centered with a semi‑opaque backdrop
+
+
+Category Buttons: Four large buttons across the top:
+
+
+First Floor
+
+
+Second Floor
+
+
+Garden
+
+
+Maintenance
+
+
+Sub‑Activity Grid:
+
+
+Once a category button is tapped, show up to 8 “recent activities” quick‑pick buttons specific to that category
+
+
+Custom Input:
+
+
+Text field labeled “Or describe your own activity…” for freeform entries
+
+
+Submit:
+
+
+Full‑width button at the bottom that appends the entry to the Volunteers sheet and shows “submission received. Thank you!” on success (or an inline red error message on failure)
+
+
+4.2 Guest Registration Modal
+Step 1: dropdown “Purpose of Visit” with options: Wedding Tour, Historic Tour, Volunteer Interest, Making Donation, Other
+
+
+Step 2: dynamic fields:
+
+
+If Wedding Tour: Bride’s & Groom’s Name + Email, Scheduled Tour Guide dropdown
+
+
+Else: Full Name, Email Address, “Join Newsletter” checkbox
+
+
+Submit:
+
+
+Full‑width button that appends to Guests sheet and shows “submission received. Thank you!” (or inline red error)
+
+
+4.3 Employee Clock Modal
+“Clock In” and “Clock Out” buttons
+
+
+Live timestamp display
+
+
+Submit:
+
+
+Full‑width button that appends to Staff sheet and shows “submission received. Thank you!” (or inline red error)
+
+
+4.4 Manage & Data Modal
+Tabs/links: People List, Reporting Dashboard, Data Exports
+
+
+
+5. Google Sheets Integration
+Single Spreadsheet with three tabs:
+
+
+Volunteers: Name | Date | Time In | Time Out | Area | Activities
+
+
+Guests: Name | Email | Phone | Reason | Join Newsletter
+
+
+Staff: Name | Date | Time In | Time Out | Notes
+
+
+API Endpoints (HTTPS + OAuth/Apps Script):
+
+
+POST /api/volunteer
+
+
+GET /api/volunteer?volunteerId=&category=
+
+
+POST /api/guest
+
+
+POST /api/employee-clock
+
+
+
+6. Behavior & Accessibility
+Feedback: On success “submission received. Thank you!”; on error, inline red message
+
+
+Responsive: Mobile‑first; cards & inputs adapt to small screens
+
+
+Accessible: Keyboard focus states, aria labels, WCAG‑compliant color contrast
+
+
+
+Let me know the next tweak!
+You said:
+Manage & Data Modal Tabs/links: People List, Reporting Dashboard, Data Export - lets me edit and delete contacts..
+ChatGPT said:
+Updated the Manage & Data Modal to include edit/delete functionality. Here’s the revised section in context:
+
+Project Brief: North Star House Check‑In Dashboard
+Overview:
+ Build a single‑page, responsive Check‑In Dashboard for North Star House staff and volunteers. It should feel light, organized, and fast, with seamless Google Sheets integration for data capture.
+
+1. Layout & Styling
+Container: Centered card, 400–600 px wide, on a light‑gray/off‑white background
+
+
+Typography: Sans‑serif
+
+
+Title: 24–32 px bold, centered
+
+
+Subtitle: 16–18 px, centered
+
+
+Body text: 14–16 px
+
+
+Spacing: 24 px vertical gaps between sections; 16 px padding inside cards
+
+
+
+2. Header Section
+Title: “Check‑In Dashboard” (bold, centered)
+
+
+Badge: 60 px accent‑color circle with white group icon, centered below title
+
+
+Subtitle: “Check into the North Star House!”
+
+
+Tagline: “Quick access to all check‑in features” (lighter weight)
+
+
+
+3. Navigation Cards
+Four stacked, full‑width (100%) cards, each 48 px tall, 16 px vertical margin, 8 px corner radius, subtle drop shadow. Inside each: an icon circle + title + subtitle.
+Color
+Name
+Icon
+Subtitle
+Blue
+Volunteer Check‑In
+hammer
+Sign in and out volunteers
+Green
+Guest Registration
+person+
+Register new guests
+Purple
+Employee Clock
+clock
+Time tracking for staff
+Red
+Manage & Data
+gear
+Manage people and view data
+
+
+4. Modals for Each Function
+Clicking a card opens its modal (fade/slide, 50% backdrop). White bg, 8 px corners, max‑width 480 px, 24 px padding, × close in top‑right.
+4.1 Volunteer Check‑In Modal
+Opens on click of the Volunteer card
+
+
+Category Buttons: First Floor, Second Floor, Garden, Maintenance
+
+
+Sub‑Activity Grid: up to 8 recent‑activity buttons per category
+
+
+Custom Input: “Or describe your own activity…” text field
+
+
+Submit: Full‑width button; on success shows “submission received. Thank you!”, on error shows inline red message
+
+
+4.2 Guest Registration Modal
+Step 1: “Purpose of Visit” dropdown (Wedding Tour, Historic Tour, Volunteer Interest, Making Donation, Other)
+
+
+Step 2: Dynamic fields
+
+
+Wedding Tour: Bride’s & Groom’s Name + Email, Scheduled Tour Guide dropdown
+
+
+Other: Full Name, Email, “Join Newsletter” checkbox
+
+
+Submit: Full‑width button; shows “submission received. Thank you!”
+
+
+4.3 Employee Clock Modal
+Clock In / Clock Out buttons
+
+
+Live timestamp display
+
+
+Submit: Full‑width button; shows “submission received. Thank you!”
+
+
+4.4 Manage & Data Modal
+Tabs/Links:
+
+
+People List – view all volunteers, guests, and staff; search by name; edit or delete any contact record
+
+
+Reporting Dashboard – summary charts and stats (check‑ins per area, guest counts, hours logged)
+
+
+Data Exports – download CSVs of each sheet tab
+
+
+
+5. Google Sheets Integration
+Single spreadsheet with three tabs:
+
+
+Volunteers: Name | Date | Time In | Time Out | Area | Activities
+
+
+Guests: Name | Email | Phone | Reason | Join Newsletter
+
+
+Staff: Name | Date | Time In | Time Out | Notes
+
+
+Secure REST endpoints (HTTPS + OAuth/Apps Script):
+
+
+POST /api/volunteer
+
+
+GET /api/volunteer?volunteerId=&category=
+
+
+POST /api/guest
+
+
+POST /api/employee-clock
+
+
+
+6. Behavior & Accessibility
+Feedback: “submission received. Thank you!” on success; inline error on failure
+
+
+Responsive: mobile‑first, adaptable layouts
+
+
+Accessible: keyboard focus, aria labels, WCAG‑compliant contrasts

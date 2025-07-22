@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* North Star House brand colors */
+  --brand-blue: hsl(217, 91%, 60%);
+  --brand-green: hsl(158, 64%, 52%);
+  --brand-purple: hsl(258, 90%, 66%);
+  --brand-red: hsl(0, 91%, 71%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-gray-50 text-foreground;
+  }
+}
+
+/* Custom brand color utilities */
+@layer utilities {
+  .bg-brand-blue {
+    background-color: hsl(217, 91%, 60%) !important;
+  }
+  
+  .bg-brand-green {
+    background-color: hsl(158, 64%, 52%) !important;
+  }
+  
+  .bg-brand-purple {
+    background-color: hsl(258, 90%, 66%) !important;
+  }
+  
+  .bg-brand-red {
+    background-color: hsl(0, 91%, 71%) !important;
+  }
+  
+  .hover\:bg-blue-600:hover {
+    background-color: hsl(217, 91%, 55%) !important;
+  }
+  
+  .hover\:bg-green-600:hover {
+    background-color: hsl(158, 64%, 47%) !important;
+  }
+  
+  .hover\:bg-red-600:hover {
+    background-color: hsl(0, 91%, 66%) !important;
+  }
+  
+  .text-brand-blue {
+    color: hsl(217, 91%, 60%) !important;
+  }
+  
+  .border-brand-blue {
+    border-color: hsl(217, 91%, 60%) !important;
+  }
+  
+  .focus\:ring-brand-blue:focus {
+    --tw-ring-color: hsl(217, 91%, 60%) !important;
+  }
+  
+  .focus\:border-brand-blue:focus {
+    border-color: hsl(217, 91%, 60%) !important;
+  }
+  
+  .focus\:ring-brand-purple:focus {
+    --tw-ring-color: hsl(258, 90%, 66%) !important;
+  }
+  
+  .focus\:border-brand-purple:focus {
+    border-color: hsl(258, 90%, 66%) !important;
+  }
+  
+  .bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)) !important;
+  }
+  
+  .from-yellow-600 {
+    --tw-gradient-from: #ca8a04 !important;
+    --tw-gradient-to: rgb(202 138 4 / 0) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+  }
+  
+  .to-yellow-800 {
+    --tw-gradient-to: #854d0e !important;
+  }
+  
+  .bg-brand-purple {
+    background-color: hsl(var(--brand-purple));
+  }
+  
+  .bg-brand-red {
+    background-color: hsl(var(--brand-red));
+  }
+  
+  .text-brand-blue {
+    color: hsl(var(--brand-blue));
+  }
+  
+  .text-brand-green {
+    color: hsl(var(--brand-green));
+  }
+  
+  .text-brand-purple {
+    color: hsl(var(--brand-purple));
+  }
+  
+  .text-brand-red {
+    color: hsl(var(--brand-red));
+  }
+  
+  .border-brand-blue {
+    border-color: hsl(var(--brand-blue));
+  }
+  
+  .border-brand-green {
+    border-color: hsl(var(--brand-green));
+  }
+  
+  .border-brand-purple {
+    border-color: hsl(var(--brand-purple));
+  }
+  
+  .border-brand-red {
+    border-color: hsl(var(--brand-red));
+  }
+  
+  .hover\:bg-brand-blue:hover {
+    background-color: hsl(var(--brand-blue));
+  }
+  
+  .hover\:bg-brand-green:hover {
+    background-color: hsl(var(--brand-green));
+  }
+  
+  .hover\:bg-brand-purple:hover {
+    background-color: hsl(var(--brand-purple));
+  }
+  
+  .hover\:bg-brand-red:hover {
+    background-color: hsl(var(--brand-red));
+  }
+}
